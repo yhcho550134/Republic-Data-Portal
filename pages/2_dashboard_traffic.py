@@ -21,7 +21,7 @@ def load_data():
     # 1) 버스 데이터 로딩
     # (주의: CSV 파일이 main.py와 같은 폴더에 있어야 합니다)
     try:
-        bus_raw = read_any("서울_9월_버스이용_구포함_최종완성.csv")
+        bus_raw = read_any("./서울_9월_버스이용_구포함_최종완성.csv")
         bus_df = bus_raw.copy()
         bus_df["date"] = pd.to_datetime(bus_df["사용일자"].astype(str), format="%Y%m%d", errors="coerce")
         bus_df["board"] = pd.to_numeric(bus_df["승차총승객수"], errors="coerce").fillna(0).astype(int)
@@ -257,3 +257,4 @@ with st.expander("데이터 테이블 보기", expanded=True):
             "하차": st.column_config.NumberColumn(format="%d명"),
         }
     )
+
