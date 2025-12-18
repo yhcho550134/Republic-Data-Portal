@@ -104,8 +104,10 @@ def load_data():
                 for keyword in dash['related_api']:
                     if keyword in target_text:
                         # 링크 생성 (target="_self"는 현재 탭, "_blank"는 새 탭)
-                        link_html = f"<a href='/{dash['url']}' target='_blank' class='dash-badge'>📊 {dash['name']}</a>"
+                        # link_html = f"<a href='/{dash['url']}' target='_blank' class='dash-badge'>📊 {dash['name']}</a>"
+                        link_html = f"<a href='{dash['url']}' target='_blank' class='dash-badge'>📊 {dash['name']}</a>"
                         links.append(link_html)
+                        raw_url = dash['url']
                         break # 중복 방지 (한 대시보드는 한 번만)
         
         # 결과 저장
@@ -448,3 +450,4 @@ else:
 # ---------------------------------------------------------
 st.markdown("---")
 st.markdown("Developed with 🐍 Python & Streamlit")
+
