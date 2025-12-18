@@ -1,0 +1,9 @@
+[
+  {
+    "id": "dash_traffic",
+    "name": "서울 대중교통 유동인구 분석",
+    "category": "🚗 교통/이동",
+    "url": "dashboard_traffic",
+    "related_api": ["XML JSON 국토교통부_대중교통 이용인원수"]
+  }
+]
